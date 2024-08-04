@@ -1,7 +1,8 @@
-import javax.swing.*;
 import java.io.*;
-import java.nio.file.*;
+import java.nio.file.Path;
 import java.util.Scanner;
+import javax.swing.JFileChooser;
+
 
 public class FileInspector
 {
