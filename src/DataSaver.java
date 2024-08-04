@@ -14,20 +14,20 @@ public class DataSaver
 
         while (continueInput)
         {
-            String firstName = getInput("Enter First Name: ");
-            String lastName = getInput("Enter Last Name: ");
-            String idNumber = getInput("Enter ID Number (6 digits): ");
-            String email = getInput("Enter Email: ");
-            String yearOfBirth = getInput("Enter Year of Birth: ");
+            String firstName = getInput("Please enter First Name: ");
+            String lastName = getInput("Please enter Last Name: ");
+            String idNumber = getInput("Please enter ID Number (6 digits): ");
+            String email = getInput("Please enter Email: ");
+            String yearOfBirth = getInput("Please enter Year of Birth: ");
 
             String csvRecord = String.format("%s, %s, %s, %s, %s",
                     firstName, lastName, idNumber, email, yearOfBirth);
             records.add(csvRecord);
 
-            continueInput = getBooleanInput("Do you want to enter another record? (yes/no): ");
+            continueInput = getBooleanInput("Would you like to enter another record? (yes/no): ");
         }
 
-        String fileName = getInput("Enter the file name (include .csv extension): ");
+        String fileName = getInput("Please enter the file name including the .csv extension: ");
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/" + fileName)))
         {
@@ -36,7 +36,7 @@ public class DataSaver
                 bw.write(record);
                 bw.newLine();
             }
-            System.out.println("Data saved successfully.");
+            System.out.println("Your data was saved successfully.");
         } catch (IOException e)
         {
             e.printStackTrace();

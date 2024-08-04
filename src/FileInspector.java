@@ -15,7 +15,7 @@ public class FileInspector
         if (result == JFileChooser.APPROVE_OPTION)
         {
             File file = fileChooser.getSelectedFile();
-            System.out.println("File selected: " + file.getName());
+            System.out.println("File you selected: " + file.getName());
 
             try (BufferedReader br = new BufferedReader(new FileReader(file)))
             {
@@ -32,7 +32,7 @@ public class FileInspector
                     System.out.println(line);
                 }
 
-                System.out.println("Summary Report:");
+                System.out.println("Summary:");
                 System.out.println("File Name: " + file.getName());
                 System.out.println("Number of lines: " + lineCount);
                 System.out.println("Number of words: " + wordCount);
@@ -45,7 +45,7 @@ public class FileInspector
         }
         else
         {
-            System.out.println("No file selected.");
+            System.out.println("No file was selected.");
         }
     }
 }
